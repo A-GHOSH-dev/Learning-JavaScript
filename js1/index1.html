@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <h1>Prime Number or not using Js</h1>
+    <span id="js1"></span>
+
+    <h1>Check whether character, number or special character</h1>
+    <span id="js2"></span>
+
+    <h1>Check palindrome</h1>
+    <span id="js3"></span>
+
+    <h1>* pattern</h1>
+    
+
+</body>
+<script>
+     ////////////////////////////////////////////////////////////
+    ///////////////////// 1 st  Question program//////////////////////////
+    ///////////////////////////////////////////////////////////
+
+
+    //take input
+    const num = parseInt(prompt("Enter a positive num: "));
+    let numisprime = true;
+    //if num = 1
+    if (num === 1) {
+        console.log("1 is not prime not composite.");
+        document.getElementById('js1').innerHTML = num + "  -> The number is not prime not composite";
+    }
+    //if num > 1, loof for num till num-1
+    else if (num > 1) {
+        for (let i = 2; i < num; i++) {
+            if (num % i == 0) {
+                numisprime = false;
+                break;
+            }
+        }
+
+        if (numisprime) {
+            console.log(num + '  is prime.');
+            document.getElementById('js1').innerHTML = num + "  -> The number is prime";
+        } else {
+            console.log(num + '  is not prime.');
+            document.getElementById('js1').innerHTML = num + "  -> The number is not prime";
+
+        }
+    }
+    //if num<1
+    else {
+        console.log("not prime");
+        document.getElementById('js1').innerHTML = num + "  -> The number is not prime";
+    }
+
+    ////////////////////////////////////////////////////////////
+    ///////////////////// 2 nd Question program//////////////////////////
+    ///////////////////////////////////////////////////////////
+
+
+//////note: For capital alphabets 65 – 90 | For small alphabets 97 – 122 | For digits 48 – 57////
+
+    function characterchecking(input) {
+        var n = input.charCodeAt(0);  //The charCodeAt() method returns the ASCII of the character at the specified index in a string.
+
+        // check for alphabets
+        if (
+            (n >= 65 && n <= 90) ||
+            (n >= 97 && n <= 122)
+        ){
+            
+            console.log(" The character is an Alphabet. ");
+            document.getElementById('js2').innerHTML = a + "  -> alphabet";
+        }
+
+        // check for numbers
+        else if (n >= 48 && n <= 57){
+            
+            console.log("The character is a number. ");
+            document.getElementById('js2').innerHTML = a + "  -> number";
+        }
+
+        // check for special characters
+        else {
+            
+            console.log(" The character is a Special Character.");
+            document.getElementById('js2').innerHTML = a + "  -> special character";
+        }
+    }
+    //take input
+    var a = prompt("Enter a character: ");
+    
+    characterchecking(a);
+
+  
+
+  ////////////////////////////////////////////////////////////
+    ///////////////////// 3 rd Question program//////////////////////////
+    ///////////////////////////////////////////////////////////
+
+
+
+function checkPalindrome(str) {
+const len = string.length;
+for (let i = 0; i < len / 2; i++) {
+    if (string[i] !== string[len - 1 - i]) {
+        return 'It is not a palindrome';
+    }
+}
+return 'It is a palindrome';
+}
+// take input
+const string = prompt('Enter a string: ');
+const value = checkPalindrome(string);
+console.log(value);
+document.getElementById('js3').innerHTML = value + "<br />";
+
+
+  ////////////////////////////////////////////////////////////
+    ///////////////////// 4 th Question program//////////////////////////
+    ///////////////////////////////////////////////////////////
+
+/* Output:
+
+*
+* *
+* * *
+* * * *
+* * * * * 
+
+*/
+
+
+var rows = prompt('Enter a integer: ');
+for(var i=1;i<=rows;i++)
+{
+for(var j=1;j<=i;j++)
+{
+document.write(" * ");
+}
+document.write("<br/>");
+}
+
+
+
+
+</script>
+
+</html>
